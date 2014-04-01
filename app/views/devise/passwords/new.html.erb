@@ -1,0 +1,33 @@
+<body class="eternity-form">
+    <section class="colorBg3 colorBg" id="demo3" data-panel="third">
+        <div class=" container">
+            <br /><br /><br />
+            <div class="forgot-password-section" data-animation="bounceInLeft">
+                <div class="section-title">
+                    <h3>Forget Password</h3>
+                    <%= devise_error_messages! %>
+                </div>
+                <div class="forgot-content">
+                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-envelope icon-color"></i></span>
+                                <%= f.email_field :email, autofocus: true, :class=>"form-control", :placeholder=>"Email Id", :required=>"required" %>
+
+                            </div>
+                        </div>
+                        <div class="forget-form-action clearfix">
+                            <center><button type="submit" class="btn btn-success green-btn">&nbsp;&nbsp;Send me reset password instructions &nbsp;&nbsp; </button></center>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="login-form-links link2 " data-animation="fadeInRightBig" data-animation-delay=".4s"><p>
+                    <a href="/users/sign_in" class="btn btn-success pull-right green-btn ">Login&nbsp;&nbsp; <i class="icon-chevron-right"></i></a>
+                    <a href="/users/sign_up" class="btn btn-success pull-left blue-btn"><i class="icon-chevron-left"></i>&nbsp;&nbsp; Register</a>
+                    </p><br>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,37 @@
+<body class="eternity-form">
+    <section class="colorBg6 colorBg dark" id="demo6" data-panel="sixth">
+        <div class=" container">
+            <br /><br /><br />
+            <div class="forgot-password-section" data-animation="bounceInLeft">
+                <div class="section-title">
+                    <h3>Change your password</h3>
+                    <%= devise_error_messages! %>
+                </div>
+                <div class="forgot-content">
+                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <%= f.hidden_field :reset_password_token %>
+                                <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                                <%= f.password_field :password, autofocus: true, autocomplete: "off", :class=>"form-control ", :placeholder=>"New password", :required=>"required" %>
+                            </div>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                                <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control ", :placeholder=>"Email Id", :required=>"required" %>
+                            </div>
+                        </div>
+                        <div class="forget-form-action clearfix">
+                            <center><button type="submit" class="btn btn-success green-btn">Confirm new password</button></center>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="forget-form-action clearfix">
+                    <a href="/users/sign_in" class="btn btn-success pull-right green-btn">Back To Login&nbsp;&nbsp; <i class="icon-chevron-right"></i></a>
+                    <a href="/users/sign_up" class="btn btn-success pull-left green-btn"><i class="icon-chevron-left"></i>&nbsp;&nbsp; Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
