@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7 sidebar sidebar-social footer-sticky"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8 sidebar sidebar-social footer-sticky"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 sidebar sidebar-social footer-sticky"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie sidebar sidebar-social footer-sticky"> <![endif]-->
+<!--[if !IE]><!--><html class="sidebar sidebar-social footer-sticky"><!-- <![endif]-->
+<html>
+<head>
+  <title>Resume</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <!-- 
+  <link rel="stylesheet/less" href="../assets/less/admin/module.admin.stylesheet-complete.less" />
+  -->
+    <!--[if lt IE 9]><link rel="stylesheet" href="http://preview.mosaicpro.biz/shared/components/library/bootstrap/css/bootstrap.min.css" /><![endif]-->
+  <link rel="stylesheet" href="/assets/dashbord/layout.css" />
+  
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<script src="/assets/dashbord/jquery.min.js"></script>
+<script src="/assets/dashbord/jquery-migrate.min.js"></script>
+<script src="/assets/dashbord/modernizr.js"></script>
+<script src="/assets/dashbord/less.min.js"></script>
+<script src="/assets/dashbord/excanvas.js"></script>
+<script src="/assets/dashbord/ie.prototype.polyfill.js"></script> 
+<script>
+  if (/*@cc_on!@*/false && document.documentMode === 10) { 
+    document.documentElement.className+=' ie ie10'; 
+  }
+</script>
+  <%= csrf_meta_tags %>
+</head>
+<body class=" menu-right-hidden">
+<!-- Main Container Fluid -->
+<div class="container-fluid menu-hidden ">
+<%= render :partial=> "layouts/dashbord/dashbord_left_sidebar" %>
+<%= render :partial=> "layouts/dashbord/dashbord_right_sidebar" %>
+
+<!-- Content START -->
+<div id="content">
+<%= render :partial=> "layouts/dashbord/dashbord_header" %>
+  <%= notice %>
+
+<%= yield %>
+</div>
+<!-- // Content END -->
+<div class="clearfix"></div>  
+
+<%= render :partial=> "layouts/dashbord/dashbord_footer" %>
+</div>
+<!-- // Main Container Fluid END -->
+<script src="/assets/dashbord/bootstrap.min.js"></script>
+<script src="/assets/dashbord/jquery.nicescroll.min.js"></script>
+<script src="/assets/dashbord/breakpoints.js"></script>
+<script src="/assets/dashbord/pace.min.js"></script>
+<script src="/assets/dashbord/jquery.sidr.js"></script>
+<script src="/assets/dashbord/twitter.init.js"></script>
+<script src="/assets/dashbord/holder.js"></script>
+<script src="/assets/dashbord/sidebar.main.init.js"></script>
+<script src="/assets/dashbord/sidebar.collapse.init.js"></script>
+<script src="/assets/dashbord/bootstrap-select.js"></script>
+<script src="/assets/dashbord/bootstrap-select.init.js"></script>
+<script src="/assets/dashbord/menus.sidebar.chat.init.js"></script>
+<script src="/assets/dashbord/jquery.mixitup.min.js"></script>
+<script src="/assets/dashbord/mixitup.init.js"></script>
+<script src="/assets/dashbord/core.init.js"></script> 
+</body>
+</html>

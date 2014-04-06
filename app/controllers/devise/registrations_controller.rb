@@ -31,7 +31,7 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/edit
   def edit
-    render :edit
+    render :edit, :layout => "dashbord/dashbord"
   end
 
   # PUT /resource
@@ -52,7 +52,8 @@ class Devise::RegistrationsController < DeviseController
       respond_with resource, location: after_update_path_for(resource)
     else
       clean_up_passwords resource
-      respond_with resource
+      #respond_with resource
+      redirect_to :back
     end
   end
 

@@ -2,7 +2,7 @@ Resume::Application.routes.draw do
   get "profile/home"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-
+  match 'user_root' => 'profile#home'
   get "wilcome/index"
   post "wilcome/send_mail"
   root :to => 'wilcome#index'

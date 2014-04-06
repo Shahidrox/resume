@@ -1,29 +1,127 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= render :partial=> "layouts/dashbord/timeline" %> 
+<div class="innerLR">
+  <!-- Form -->
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :class=>"form-horizontal margin-none", :onsubmit=>"return validateForm()", :name=>"myForm" }) do |f| %>
+  <!-- Widget -->
+  <div class="widget">
+  
+    <!-- Widget heading -->
+    <div class="widget-head">
+      <h4 class="heading">Edit Acount</h4>
+    </div>
+    <!-- // Widget heading END -->
+    <h4 class="heading"><%= devise_error_messages! %></h4>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="widget-body innerAll inner-2x">
+    
+      <!-- Row -->
+      <div class="row innerLR">
+      
+        <!-- Column -->
+        <div class="col-md-4">
+        
+          <!-- Group -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="firstname">First name</label>
+            <div class="col-md-8">
+              <%= f.text_field :name, :class=>"form-control", autofocus: true %>
+            </div>
+          </div>
+          <!-- // Group END -->
+          
+          <!-- Group -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="email">E-mail</label>
+            <div class="col-md-8">
+              <%= f.email_field :email, :class=>"form-control" %>
+            </div>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+          </div>
+          <!-- // Group END -->          
+        </div>
+        <!-- // Column END -->
+        
+        <!-- Column -->
+        <div class="col-md-8">
+        
+          <!-- Group -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="password">Password</label>
+            <div class="col-md-8">
+              <%= f.password_field :password, :class=>"form-control", autocomplete: "off" %>
+            </div>
+          </div>
+          <!-- // Group END -->
+          
+          <!-- Group -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="confirm_password">Confirm password</label>
+            <div class="col-md-8">
+              <%= f.password_field :password_confirmation, :class=>"form-control", autocomplete: "off" %>
+            </div>
+          </div>
+          <!-- // Group END --> 
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+          <!-- Group -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="confirm_password">Current password</label>
+            <div class="col-md-8">
+              <%= f.password_field :current_password, :class=>"form-control", :name=>"fname", autocomplete: "off" %>
+            </div>
+          </div>
+          <!-- // Group END --> 
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Update" %></div>
+        </div>
+        <!-- // Column END -->
+        
+      </div>
+      <!-- // Row END -->
+      <div class="separator"></div>
+      
+      <!-- Form actions -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> Save</button>
+        <a href="/profile/home" class="btn btn-default"><i class="fa fa-times"></i> Cancel</a>
+      </div>
+      <!-- // Form actions END -->
+      
+    </div>
+  </div>
+  <!-- // Widget END -->
 <% end %>
+<!-- // Form END -->
 
-<h3>Cancel my account</h3>
+<div class="widget">
+  <div class="widget-head">
+      <h4 class="heading">Cancel my account</h4>
+    </div>
+</div>
+<div class="widget-body innerAll inner-2x">
+    
+      <!-- Row -->
+      <div class="row innerLR">
+      
+        <!-- Column -->
+        <div class="col-md-4">
+        
+          <!-- Group -->
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          <div class="form-actions">
+            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,:class=>"btn btn-danger" %>
+      </div>
+        </div></div></div>
+</div>
 
-<%= link_to "Back", :back %>
+<script>
+function validateForm()
+{
+var x=document.forms["myForm"]["fname"].value;
+if (x==null || x=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+}
+</script>
